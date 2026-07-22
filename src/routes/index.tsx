@@ -32,7 +32,6 @@ const nav = [
   ["Project", "#flagship"],
   ["Highlights", "#highlights"],
   ["Status", "#status"],
-  ["Investment", "#investment"],
   ["Roadmap", "#roadmap"],
   ["Why Us", "#why"],
   ["Governance", "#governance"],
@@ -67,7 +66,7 @@ function Home_() {
           </nav>
           <div className="flex items-center gap-3">
             <a href="#contact" className="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium shadow-gold hover:opacity-90 transition">
-              Invest with us
+              Get in Touch
             </a>
             <button
               type="button"
@@ -97,7 +96,7 @@ function Home_() {
               onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium shadow-gold hover:opacity-90 transition"
             >
-              Invest with us
+              Get in Touch
             </a>
           </nav>
         )}
@@ -328,63 +327,11 @@ function Home_() {
         </div>
       </section>
 
-      {/* INVESTMENT STRUCTURE */}
-      <section id="investment" className="py-28 bg-card/30">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionLabel n="06">Investment Structure</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">The <span className="text-gradient-gold italic">numbers.</span></h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="overflow-hidden rounded-2xl border border-border">
-              {[
-                ["Total Project Cost", "22.80 Crore BDT"],
-                ["Land & Registration", "15.00 Crore BDT"],
-                ["Construction Cost", "07.80 Crore BDT"],
-                ["Total Shares", "19 Shares"],
-                ["Share Value (Each)", "1.20 Crore BDT"],
-                ["Commercial Use", "100%"],
-              ].map(([k, v], i) => (
-                <div key={k} className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-card" : "bg-card/50"}`}>
-                  <div className="px-6 py-4 bg-gradient-to-r from-gold-deep/30 to-transparent border-r border-border font-medium text-foreground">{k}</div>
-                  <div className="px-6 py-4 text-gold font-display text-lg">{v}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Donut */}
-            <div className="flex flex-col items-center">
-              <div className="relative w-64 h-64">
-                <svg viewBox="0 0 42 42" className="w-full h-full -rotate-90">
-                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="oklch(0.30 0.02 250)" strokeWidth="6" />
-                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="oklch(0.55 0.14 65)" strokeWidth="6" strokeDasharray="65.8 100" />
-                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="oklch(0.82 0.12 82)" strokeWidth="6" strokeDasharray="34.2 100" strokeDashoffset="-65.8" />
-                </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="text-4xl font-display text-gradient-gold">22.80</div>
-                  <div className="text-sm text-muted-foreground">Crore BDT</div>
-                </div>
-              </div>
-              <div className="mt-6 space-y-2 w-full max-w-xs">
-                <div className="flex justify-between items-center text-sm">
-                  <span className="flex items-center gap-2"><span className="w-3 h-3 rounded-sm bg-gold-deep" /> Land & Registration</span>
-                  <span className="text-gold font-medium">65.8%</span>
-                </div>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="flex items-center gap-2"><span className="w-3 h-3 rounded-sm bg-gold" /> Construction</span>
-                  <span className="text-gold font-medium">34.2%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FINANCIAL ROADMAP */}
       <section id="roadmap" className="py-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <SectionLabel n="07">Financial Roadmap</SectionLabel>
+            <SectionLabel n="06">Financial Roadmap</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-light">From investment to <span className="text-gradient-gold italic">returns.</span></h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
@@ -421,7 +368,7 @@ function Home_() {
       <section id="why" className="py-28 bg-card/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <SectionLabel n="08">Why Invest With Us</SectionLabel>
+            <SectionLabel n="07">Why Invest With Us</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-light">Confidence <span className="text-gradient-gold italic">by design.</span></h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -451,7 +398,7 @@ function Home_() {
       <section id="governance" className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 radial-glow opacity-60" />
         <div className="relative max-w-5xl mx-auto px-6 text-center">
-          <SectionLabel n="09">Corporate Governance &amp; Our Commitment</SectionLabel>
+          <SectionLabel n="08">Corporate Governance &amp; Our Commitment</SectionLabel>
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
             Integrity. Transparency. <span className="text-gradient-gold italic">Professionalism.</span>
           </h2>
@@ -479,7 +426,7 @@ function Home_() {
       <section id="offices" className="py-28 bg-card/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <SectionLabel n="10">Our Offices</SectionLabel>
+            <SectionLabel n="09">Our Offices</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-light">Where you'll <span className="text-gradient-gold italic">find us.</span></h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -503,7 +450,7 @@ function Home_() {
       {/* CONTACT */}
       <section id="contact" className="py-28">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <SectionLabel n="11">Contact</SectionLabel>
+          <SectionLabel n="10">Contact</SectionLabel>
           <h2 className="text-4xl md:text-5xl font-light mb-8">
             Let's <span className="text-gradient-gold italic">connect.</span>
           </h2>
