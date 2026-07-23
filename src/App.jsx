@@ -669,6 +669,14 @@ function App() {
                     <div key={l}>{l}</div>
                   ))}
                 </address>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.lines.join(", "))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-gold hover:text-gold-soft transition-colors"
+                >
+                  View on map <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             ))}
           </div>
@@ -709,6 +717,9 @@ function App() {
               Bag-e-Rahmat Holdings Limited
             </div>
             © {new Date().getFullYear()} — Building Today, Empowering Tomorrow.
+            <div className="mt-1 text-xs text-muted-foreground/70">
+              Developed by Nexovia IT Limited
+            </div>
           </div>
         </div>
       </footer>
