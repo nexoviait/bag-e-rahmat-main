@@ -1,30 +1,32 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo.png";
 import towerHero from "@/assets/tower-hero.png";
 import flagshipTower from "@/assets/flagship-tower.png";
 import aboutTower from "@/assets/about-tower.png";
 import projectStatusImg from "@/assets/project-status.png";
 import {
-  Mail, MapPin, Building2, ShieldCheck, TrendingUp, Sparkles,
-  Eye, Target, Check, Clock, DollarSign, BarChart3, Users, Award,
-  Home, Store, Landmark, PieChart, ArrowRight, CheckCircle2,
-  Menu, X,
+  Mail,
+  MapPin,
+  Building2,
+  ShieldCheck,
+  TrendingUp,
+  Sparkles,
+  Eye,
+  Target,
+  Check,
+  Clock,
+  DollarSign,
+  BarChart3,
+  Users,
+  Award,
+  Store,
+  Landmark,
+  PieChart,
+  ArrowRight,
+  CheckCircle2,
+  Menu,
+  X,
 } from "lucide-react";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Bag-e-Rahmat Holdings Limited — Building Today, Empowering Tomorrow" },
-      { name: "description", content: "Bag-e-Rahmat Holdings Limited — a trusted name in real estate development. Investment, corporate governance, and the Darul Aman Tower flagship project in Dhaka, Bangladesh." },
-      { property: "og:title", content: "Bag-e-Rahmat Holdings Limited" },
-      { property: "og:description", content: "Diversified investments, project development, and the Darul Aman Tower — a landmark commercial project in Dhaka, Bangladesh." },
-      { property: "og:image", content: towerHero},
-      { name: "twitter:image", content: towerHero },
-    ],
-  }),
-  component: Home_,
-});
 
 const nav = [
   ["About", "#about"],
@@ -38,7 +40,7 @@ const nav = [
   ["Contact", "#contact"],
 ];
 
-function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
+function SectionLabel({ n, children }) {
   return (
     <div className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-gold mb-5">
       <span className="text-gold-deep">{n}</span>
@@ -48,7 +50,7 @@ function SectionLabel({ n, children }: { n: string; children: React.ReactNode })
   );
 }
 
-function Home_() {
+function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -57,15 +59,28 @@ function Home_() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/75 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset} alt="Bag-e-Rahmat Holdings" className="h-10 w-auto" />
+            <img
+              src={logoAsset}
+              alt="Bag-e-Rahmat Holdings"
+              className="h-10 w-auto"
+            />
           </a>
           <nav className="hidden lg:flex items-center gap-6 text-sm text-muted-foreground">
             {nav.map(([label, href]) => (
-              <a key={href} href={href} className="hover:text-gold transition-colors">{label}</a>
+              <a
+                key={href}
+                href={href}
+                className="hover:text-gold transition-colors"
+              >
+                {label}
+              </a>
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a href="#contact" className="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium shadow-gold hover:opacity-90 transition">
+            <a
+              href="#contact"
+              className="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium shadow-gold hover:opacity-90 transition"
+            >
               Get in Touch
             </a>
             <button
@@ -75,7 +90,11 @@ function Home_() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-border text-foreground hover:text-gold hover:border-gold/40 transition"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -103,9 +122,16 @@ function Home_() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative pt-32 pb-24 overflow-hidden min-h-[92vh] flex items-center">
+      <section
+        id="top"
+        className="relative pt-32 pb-24 overflow-hidden min-h-[92vh] flex items-center"
+      >
         <div className="absolute inset-0">
-          <img src={towerHero} alt="Darul Aman Tower" className="w-full h-full object-cover opacity-50" />
+          <img
+            src={towerHero}
+            alt="Darul Aman Tower"
+            className="w-full h-full object-cover opacity-50"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
           <div className="absolute inset-0 radial-glow" />
         </div>
@@ -115,19 +141,28 @@ function Home_() {
               <Sparkles className="w-3 h-3" /> Est. Holdings · Dhaka, Bangladesh
             </div>
             <h1 className="text-5xl md:text-7xl font-light leading-[1.02] mb-6">
-              Building Today,<br />
-              <span className="text-gradient-gold italic">Empowering</span><br />
+              Building Today,
+              <br />
+              <span className="text-gradient-gold italic">Empowering</span>
+              <br />
               Tomorrow.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Bag-e-Rahmat Holdings Limited — a diversified investment and business
-              management company committed to excellence, innovation, and sustainable growth.
+              Bag-e-Rahmat Holdings Limited — a diversified investment and
+              business management company committed to excellence, innovation,
+              and sustainable growth.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#flagship" className="px-7 py-3 rounded-full bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition">
+              <a
+                href="#flagship"
+                className="px-7 py-3 rounded-full bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition"
+              >
                 View Flagship Project
               </a>
-              <a href="#contact" className="px-7 py-3 rounded-full border border-gold/40 text-foreground hover:bg-gold/10 transition">
+              <a
+                href="#contact"
+                className="px-7 py-3 rounded-full border border-gold/40 text-foreground hover:bg-gold/10 transition"
+              >
                 Contact Us
               </a>
             </div>
@@ -135,7 +170,9 @@ function Home_() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6"><div className="divider-gold" /></div>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="divider-gold" />
+      </div>
 
       {/* ABOUT */}
       <section id="about" className="py-28">
@@ -143,14 +180,27 @@ function Home_() {
           <div className="md:col-span-6 order-2 md:order-1">
             <SectionLabel n="01">About The Company</SectionLabel>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
-              <span className="text-gradient-gold italic">Bag-e-Rahmat</span> Holdings Ltd.
+              <span className="text-gradient-gold italic">Bag-e-Rahmat</span>{" "}
+              Holdings Ltd.
             </h2>
             <div className="space-y-5">
               {[
-                { icon: Landmark, t: "A trusted name in real estate development" },
-                { icon: ShieldCheck, t: "Committed to quality, transparency & excellence" },
-                { icon: Building2, t: "Building commercial assets for long-term value" },
-                { icon: TrendingUp, t: "Focused on growth, sustainability & innovation" },
+                {
+                  icon: Landmark,
+                  t: "A trusted name in real estate development",
+                },
+                {
+                  icon: ShieldCheck,
+                  t: "Committed to quality, transparency & excellence",
+                },
+                {
+                  icon: Building2,
+                  t: "Building commercial assets for long-term value",
+                },
+                {
+                  icon: TrendingUp,
+                  t: "Focused on growth, sustainability & innovation",
+                },
               ].map(({ icon: Icon, t }) => (
                 <div key={t} className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
@@ -163,7 +213,11 @@ function Home_() {
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
             <div className="relative rounded-2xl overflow-hidden border border-gold/20 shadow-gold">
-              <img src={aboutTower} alt="Darul Aman Tower architectural rendering" className="w-full h-auto" />
+              <img
+                src={aboutTower}
+                alt="Darul Aman Tower architectural rendering"
+                className="w-full h-auto"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
             </div>
           </div>
@@ -176,7 +230,10 @@ function Home_() {
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="02">Vision &amp; Mission</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">Where we're <span className="text-gradient-gold italic">headed.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              Where we're{" "}
+              <span className="text-gradient-gold italic">headed.</span>
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-10 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all">
@@ -185,7 +242,8 @@ function Home_() {
               </div>
               <h3 className="text-2xl font-display mb-4">Our Vision</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To become one of the most trusted and leading real estate developers in Bangladesh.
+                To become one of the most trusted and leading real estate
+                developers in Bangladesh.
               </p>
             </div>
             <div className="p-10 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all">
@@ -200,7 +258,10 @@ function Home_() {
                   "Maximize shareholder value",
                   "Generate sustainable rental income",
                 ].map((m) => (
-                  <li key={m} className="flex items-start gap-3 text-muted-foreground">
+                  <li
+                    key={m}
+                    className="flex items-start gap-3 text-muted-foreground"
+                  >
                     <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                     <span>{m}</span>
                   </li>
@@ -217,13 +278,17 @@ function Home_() {
           <div className="md:col-span-6">
             <SectionLabel n="03">Our Flagship Project</SectionLabel>
             <h2 className="text-5xl md:text-6xl font-light leading-none mb-6">
-              <span className="text-gradient-gold italic">Darul Aman</span><br />Tower
+              <span className="text-gradient-gold italic">Darul Aman</span>
+              <br />
+              Tower
             </h2>
             <div className="flex items-start gap-3 mb-8 text-muted-foreground">
               <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
               <div>
-                53/2, D.I.T Extension Road,<br />
-                Fakirapool, Naya Paltan,<br />
+                53/2, D.I.T Extension Road,
+                <br />
+                Fakirapool, Naya Paltan,
+                <br />
                 Dhaka-1000
               </div>
             </div>
@@ -234,7 +299,10 @@ function Home_() {
                 { icon: Sparkles, t: "Modern Design" },
                 { icon: TrendingUp, t: "High Rental Potential" },
               ].map(({ icon: Icon, t }) => (
-                <div key={t} className="p-4 rounded-xl bg-card border border-border flex items-center gap-3">
+                <div
+                  key={t}
+                  className="p-4 rounded-xl bg-card border border-border flex items-center gap-3"
+                >
                   <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-4 h-4 text-gold" />
                   </div>
@@ -245,7 +313,11 @@ function Home_() {
           </div>
           <div className="md:col-span-6">
             <div className="relative rounded-2xl overflow-hidden border border-gold/30 shadow-gold">
-              <img src={flagshipTower} alt="Darul Aman Tower" className="w-full h-auto" />
+              <img
+                src={flagshipTower}
+                alt="Darul Aman Tower"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
@@ -256,23 +328,55 @@ function Home_() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="04">Project Highlights</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">What makes it <span className="text-gradient-gold italic">exceptional.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              What makes it{" "}
+              <span className="text-gradient-gold italic">exceptional.</span>
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: MapPin, t: "Prime & Strategic Location", d: "In the heart of Dhaka" },
-              { icon: Building2, t: "B + G + 6 Commercial Building", d: "Basement, Ground plus 6 floors" },
-              { icon: Sparkles, t: "Modern Architectural Design", d: "With all modern facilities" },
-              { icon: TrendingUp, t: "High Rental Yield", d: "& long-term asset value" },
-              { icon: Store, t: "Multi-Use Potential", d: "Corporate office, hotel, showroom & retail" },
-              { icon: Award, t: "Landmark Development", d: "Iconic architectural presence" },
+              {
+                icon: MapPin,
+                t: "Prime & Strategic Location",
+                d: "In the heart of Dhaka",
+              },
+              {
+                icon: Building2,
+                t: "B + G + 6 Commercial Building",
+                d: "Basement, Ground plus 6 floors",
+              },
+              {
+                icon: Sparkles,
+                t: "Modern Architectural Design",
+                d: "With all modern facilities",
+              },
+              {
+                icon: TrendingUp,
+                t: "High Rental Yield",
+                d: "& long-term asset value",
+              },
+              {
+                icon: Store,
+                t: "Multi-Use Potential",
+                d: "Corporate office, hotel, showroom & retail",
+              },
+              {
+                icon: Award,
+                t: "Landmark Development",
+                d: "Iconic architectural presence",
+              },
             ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all group">
+              <div
+                key={t}
+                className="p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all group"
+              >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
                   <Icon className="w-6 h-6 text-gold" />
                 </div>
                 <h3 className="text-lg font-display mb-2">{t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {d}
+                </p>
               </div>
             ))}
           </div>
@@ -284,7 +388,10 @@ function Home_() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="05">Project Status</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">Where we <span className="text-gradient-gold italic">stand today.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              Where we{" "}
+              <span className="text-gradient-gold italic">stand today.</span>
+            </h2>
           </div>
 
           {/* Timeline */}
@@ -298,12 +405,27 @@ function Home_() {
                 { t: "Super Structure", done: false },
                 { t: "Finishing & Operation", done: false },
               ].map((s, i) => (
-                <div key={s.t} className="flex flex-col items-center text-center">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center border-2 ${s.done ? "bg-gold/15 border-gold" : "bg-card border-border"}`}>
-                    {s.done ? <CheckCircle2 className="w-7 h-7 text-gold" /> : <Clock className="w-7 h-7 text-muted-foreground" />}
+                <div
+                  key={s.t}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center border-2 ${s.done ? "bg-gold/15 border-gold" : "bg-card border-border"}`}
+                  >
+                    {s.done ? (
+                      <CheckCircle2 className="w-7 h-7 text-gold" />
+                    ) : (
+                      <Clock className="w-7 h-7 text-muted-foreground" />
+                    )}
                   </div>
-                  <div className="mt-4 text-sm font-medium text-foreground">{s.t}</div>
-                  <div className={`text-xs mt-1 ${s.done ? "text-gold" : "text-muted-foreground"}`}>{s.done ? "Completed" : "Upcoming"}</div>
+                  <div className="mt-4 text-sm font-medium text-foreground">
+                    {s.t}
+                  </div>
+                  <div
+                    className={`text-xs mt-1 ${s.done ? "text-gold" : "text-muted-foreground"}`}
+                  >
+                    {s.done ? "Completed" : "Upcoming"}
+                  </div>
                   {i < 5 && <div className="hidden md:block absolute" />}
                 </div>
               ))}
@@ -312,7 +434,9 @@ function Home_() {
 
           <div className="grid md:grid-cols-2 gap-8 mt-8 items-center">
             <div className="p-8 rounded-2xl bg-gradient-to-br from-card to-card/40 border border-gold/30">
-              <div className="text-xs uppercase tracking-[0.25em] text-gold mb-3">Current Progress</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-gold mb-3">
+                Current Progress
+              </div>
               <p className="text-lg text-foreground leading-relaxed mb-3">
                 Piling and site protection work completed successfully.
               </p>
@@ -321,7 +445,11 @@ function Home_() {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden border border-border">
-              <img src={projectStatusImg} alt="Construction site progress" className="w-full h-full object-cover" />
+              <img
+                src={projectStatusImg}
+                alt="Construction site progress"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -332,24 +460,48 @@ function Home_() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="06">Financial Roadmap</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">From investment to <span className="text-gradient-gold italic">returns.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              From investment to{" "}
+              <span className="text-gradient-gold italic">returns.</span>
+            </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
             {[
-              { icon: DollarSign, t: "Investment", d: "Shareholders Investment" },
-              { icon: Building2, t: "Construction", d: "Building with Quality" },
-              { icon: Store, t: "Commercial Rental", d: "Attractive Rental Income" },
-              { icon: BarChart3, t: "Monthly Income", d: "Sustainable Cash Flow" },
+              {
+                icon: DollarSign,
+                t: "Investment",
+                d: "Shareholders Investment",
+              },
+              {
+                icon: Building2,
+                t: "Construction",
+                d: "Building with Quality",
+              },
+              {
+                icon: Store,
+                t: "Commercial Rental",
+                d: "Attractive Rental Income",
+              },
+              {
+                icon: BarChart3,
+                t: "Monthly Income",
+                d: "Sustainable Cash Flow",
+              },
               { icon: Users, t: "Dividend", d: "Return to Shareholders" },
             ].map(({ icon: Icon, t, d }, i, a) => (
-              <div key={t} className="relative flex flex-col items-center text-center">
+              <div
+                key={t}
+                className="relative flex flex-col items-center text-center"
+              >
                 <div className="w-20 h-20 rounded-full bg-card border-2 border-gold/40 flex items-center justify-center shadow-gold">
                   <Icon className="w-8 h-8 text-gold" />
                 </div>
                 {i < a.length - 1 && (
                   <ArrowRight className="hidden md:block absolute top-6 -right-4 w-6 h-6 text-gold/60" />
                 )}
-                <div className="mt-4 font-display text-lg text-foreground">{t}</div>
+                <div className="mt-4 font-display text-lg text-foreground">
+                  {t}
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">{d}</div>
               </div>
             ))}
@@ -357,8 +509,12 @@ function Home_() {
           <div className="p-8 rounded-2xl bg-gradient-gold text-primary-foreground flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
             <MapPin className="w-6 h-6" />
             <div>
-              <div className="text-xl font-display font-semibold">Expected Income Start: September – October 2026</div>
-              <div className="text-sm opacity-80">Shops, Offices &amp; Hotel Operations</div>
+              <div className="text-xl font-display font-semibold">
+                Expected Income Start: September – October 2026
+              </div>
+              <div className="text-sm opacity-80">
+                Shops, Offices &amp; Hotel Operations
+              </div>
             </div>
           </div>
         </div>
@@ -369,23 +525,51 @@ function Home_() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="07">Why Invest With Us</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">Confidence <span className="text-gradient-gold italic">by design.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              Confidence{" "}
+              <span className="text-gradient-gold italic">by design.</span>
+            </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: MapPin, t: "Prime Location", d: "High demand area" },
-              { icon: Users, t: "Experienced Management", d: "Proven track record" },
-              { icon: TrendingUp, t: "Long Term Income", d: "Sustainable returns" },
-              { icon: BarChart3, t: "Asset Appreciation", d: "Value grows over time" },
-              { icon: ShieldCheck, t: "Transparent Operation", d: "Clear reporting & governance" },
-              { icon: PieChart, t: "Strong Growth Potential", d: "Positioned for scale" },
+              {
+                icon: Users,
+                t: "Experienced Management",
+                d: "Proven track record",
+              },
+              {
+                icon: TrendingUp,
+                t: "Long Term Income",
+                d: "Sustainable returns",
+              },
+              {
+                icon: BarChart3,
+                t: "Asset Appreciation",
+                d: "Value grows over time",
+              },
+              {
+                icon: ShieldCheck,
+                t: "Transparent Operation",
+                d: "Clear reporting & governance",
+              },
+              {
+                icon: PieChart,
+                t: "Strong Growth Potential",
+                d: "Positioned for scale",
+              },
             ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all flex items-center gap-5">
+              <div
+                key={t}
+                className="p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all flex items-center gap-5"
+              >
                 <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-6 h-6 text-gold" />
                 </div>
                 <div>
-                  <div className="font-display text-lg text-foreground">{t}</div>
+                  <div className="font-display text-lg text-foreground">
+                    {t}
+                  </div>
                   <div className="text-sm text-muted-foreground">{d}</div>
                 </div>
               </div>
@@ -398,24 +582,44 @@ function Home_() {
       <section id="governance" className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 radial-glow opacity-60" />
         <div className="relative max-w-5xl mx-auto px-6 text-center">
-          <SectionLabel n="08">Corporate Governance &amp; Our Commitment</SectionLabel>
+          <SectionLabel n="08">
+            Corporate Governance &amp; Our Commitment
+          </SectionLabel>
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
-            Integrity. Transparency. <span className="text-gradient-gold italic">Professionalism.</span>
+            Integrity. Transparency.{" "}
+            <span className="text-gradient-gold italic">Professionalism.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            We are dedicated to maintaining the highest standards across all our business
-            operations — focused on efficient management, strategic growth, and delivering
-            sustainable value through responsible business practices.
+            We are dedicated to maintaining the highest standards across all our
+            business operations — focused on efficient management, strategic
+            growth, and delivering sustainable value through responsible
+            business practices.
           </p>
           <div className="mt-14 grid sm:grid-cols-3 gap-6">
             {[
-              { k: "Integrity", v: "Uncompromising ethical standards in every decision." },
-              { k: "Transparency", v: "Open governance and clear accountability." },
-              { k: "Sustainability", v: "Long-term value through responsible practice." },
+              {
+                k: "Integrity",
+                v: "Uncompromising ethical standards in every decision.",
+              },
+              {
+                k: "Transparency",
+                v: "Open governance and clear accountability.",
+              },
+              {
+                k: "Sustainability",
+                v: "Long-term value through responsible practice.",
+              },
             ].map((p) => (
-              <div key={p.k} className="p-8 rounded-2xl bg-card/60 border border-border backdrop-blur-sm">
-                <div className="text-2xl font-display text-gradient-gold mb-3">{p.k}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.v}</p>
+              <div
+                key={p.k}
+                className="p-8 rounded-2xl bg-card/60 border border-border backdrop-blur-sm"
+              >
+                <div className="text-2xl font-display text-gradient-gold mb-3">
+                  {p.k}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {p.v}
+                </p>
               </div>
             ))}
           </div>
@@ -427,19 +631,43 @@ function Home_() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <SectionLabel n="09">Our Offices</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-light">Where you'll <span className="text-gradient-gold italic">find us.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              Where you'll{" "}
+              <span className="text-gradient-gold italic">find us.</span>
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: "Corporate Office", lines: ["1/A Alauddin Bhaban", "DIT Extension Road, Fakirapool", "Motijheel, Dhaka — Level 3", "Bangladesh"] },
-              { title: "Head Office", lines: ["53/2 DIT Extension Road", "Fakirapool, Nayabadan", "Dhaka-1000", "Bangladesh"] },
+              {
+                title: "Corporate Office",
+                lines: [
+                  "1/A Alauddin Bhaban",
+                  "DIT Extension Road, Fakirapool",
+                  "Motijheel, Dhaka — Level 3",
+                  "Bangladesh",
+                ],
+              },
+              {
+                title: "Head Office",
+                lines: [
+                  "53/2 DIT Extension Road",
+                  "Fakirapool, Nayabadan",
+                  "Dhaka-1000",
+                  "Bangladesh",
+                ],
+              },
             ].map((o) => (
-              <div key={o.title} className="group relative p-10 rounded-2xl bg-card border border-border hover:border-gold/50 transition-all">
+              <div
+                key={o.title}
+                className="group relative p-10 rounded-2xl bg-card border border-border hover:border-gold/50 transition-all"
+              >
                 <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
                 <MapPin className="w-7 h-7 text-gold mb-5" />
                 <h3 className="text-2xl font-display mb-5">{o.title}</h3>
                 <address className="not-italic space-y-1.5 text-muted-foreground">
-                  {o.lines.map((l) => <div key={l}>{l}</div>)}
+                  {o.lines.map((l) => (
+                    <div key={l}>{l}</div>
+                  ))}
                 </address>
               </div>
             ))}
@@ -455,8 +683,8 @@ function Home_() {
             Let's <span className="text-gradient-gold italic">connect.</span>
           </h2>
           <p className="text-muted-foreground mb-10 text-lg">
-            For partnership inquiries, investment opportunities, or general correspondence —
-            reach our team directly.
+            For partnership inquiries, investment opportunities, or general
+            correspondence — reach our team directly.
           </p>
           <a
             href="mailto:brholdings2025@gmail.com"
@@ -471,9 +699,15 @@ function Home_() {
       {/* FOOTER */}
       <footer className="border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <img src={logoAsset} alt="Bag-e-Rahmat Holdings" className="h-10 w-auto" />
+          <img
+            src={logoAsset}
+            alt="Bag-e-Rahmat Holdings"
+            className="h-10 w-auto"
+          />
           <div className="text-sm text-muted-foreground text-center md:text-right">
-            <div className="text-gold font-display text-base mb-1">Bag-e-Rahmat Holdings Limited</div>
+            <div className="text-gold font-display text-base mb-1">
+              Bag-e-Rahmat Holdings Limited
+            </div>
             © {new Date().getFullYear()} — Building Today, Empowering Tomorrow.
           </div>
         </div>
@@ -481,3 +715,5 @@ function Home_() {
     </div>
   );
 }
+
+export default App;

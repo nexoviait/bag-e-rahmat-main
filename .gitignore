@@ -1,9 +1,5 @@
 node_modules
 dist
-.output
-.vercel
-.wrangler
-.tanstack
 *.log
 .env
 .env.local
